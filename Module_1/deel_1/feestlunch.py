@@ -10,4 +10,4 @@ kortingsbonnen = 3 * 0.50
 
 totaal = totaal_croissant + totaal_stokbrood - kortingsbonnen
 
-print(totaal)
+print(f"U moet totaal {totaal} euro betalen.")
