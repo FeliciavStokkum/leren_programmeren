@@ -2,8 +2,6 @@ croissant_prijs = 0.39
 stokbrood_prijs = 2.78
 croissant_aantal = 17
 stokbrood_aantal = 2
-kortingsbonnen_aantal = 3
-
 
 totaal_croissant = croissant_prijs * 17
 totaal_stokbrood = stokbrood_prijs * 2
