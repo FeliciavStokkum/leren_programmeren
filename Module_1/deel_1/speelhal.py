@@ -6,9 +6,11 @@
 
 # Maak een programma speelhal.py voor deze berekening.
 
-toegangsticket = 7.45 * 4
-vr_per_persoon = 0.37 * 9 
+vr_factor = 45 / 5
 
-totaal = toegangsticket + vr_per_persoon
+toegangsticket = 7.45 * 4
+vr_per_persoon = 0.37 * vr_factor * 4
+
+totaal = int(toegangsticket + vr_per_persoon)
 
 print(f"Je moet totaal {totaal} betalen.")
