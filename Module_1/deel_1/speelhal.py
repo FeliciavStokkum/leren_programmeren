@@ -6,10 +6,10 @@
 
 # Maak een programma speelhal.py voor deze berekening.
 
-vr_factor = 45 / 5
+vr_minuten = 45 / 5
 
 toegangsticket = 7.45 * 4
-vr_per_persoon = 0.37 * vr_factor * 4
+vr_per_persoon = 0.37 * vr_minuten * 4
 
 totaal = int(toegangsticket + vr_per_persoon)
 
