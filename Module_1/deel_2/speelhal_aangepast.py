@@ -1,17 +1,14 @@
-vr_factor = int(input("Hoeveel minuten wil je in de VR? "))
-hoeveel_mensen = int(input("Met hoeveel mensen wil je gaan? "))
-toegang_prijs = int(input("Hoeveel centen kost de toegangsticket? "))
+toegangsticket = float(input("Hoeveel kost een toegangsticket? "))
+aantal_personen = int(input("Met hoeveel personen ga je? "))
+toegangsticket = toegangsticket * 100
+toegangs_totaal = aantal_personen * toegangsticket
 
-toegang_prijs_centen= int(toegang_prijs * 100)
+aantal_minuten_vr = int(input("Hoeveel minuten wil je de gameseat gebruiken? "))
+vr_per_5_min = float(input("Hoeveel kost 5 minuten in de gameseat? "))
+vr_per_minuut = vr_per_5_min/5
+vr_per_minuut = vr_per_minuut * 100
+vr_totaal = (vr_per_minuut * aantal_minuten_vr) * aantal_personen
 
-vr_factor_prijs_per_minuut = vr_factor / 5 * 0.37 * 100
+totaal = toegangs_totaal + vr_totaal
 
-totaal_prijs_vr_centen = vr_factor_prijs_per_minuut * hoeveel_mensen
-
-totaal_prijs_toegang_centen = toegang_prijs_centen * hoeveel_mensen
-
-totaal_centen = totaal_prijs_toegang_centen + totaal_prijs_vr_centen
-
-totaal_euro = totaal_centen / 100
-
-print(f"Je moet in totaal {totaal_euro:.2f} euro betalen.")
+print(f"De totale kosten zijn {totaal} euro centen")
