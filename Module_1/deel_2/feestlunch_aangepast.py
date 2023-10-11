@@ -13,5 +13,8 @@ totaal_stokbrood = stokbrood_prijs * stokbrood_aantal
 kortingsbonnen = kortingsbonnen_aantal * waarde_kortingsbonnen
 
 totaal = totaal_croissant + totaal_stokbrood - kortingsbonnen
+totaal_euro = totaal / 100
 
-print(f"U moet totaal {totaal} euro cent betalen.")
+afgerond_totaal_euro = round(totaal_euro,2)
+
+print(f"U moet totaal {afgerond_totaal_euro} euro cent betalen.")
