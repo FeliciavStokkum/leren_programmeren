@@ -6,5 +6,4 @@ max = a
 #Bepaal welk getal groter is dmv een if statement
 if a > b: 
     print("a is het grootste getal:", max)
-elif b > a:
-    print("getal b is groter dan getal a")
+
