@@ -9,3 +9,5 @@ if a > b:
 elif a < b:
     min = a
     print("a is het kleinste getal:", min)
+else: 
+    print("a en b zijn even groot")
