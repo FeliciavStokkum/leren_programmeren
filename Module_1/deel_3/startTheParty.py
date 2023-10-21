@@ -1,11 +1,9 @@
-gastheer = input("Wie is de gastheer? ")
-gasten = int(input("Hoeveel gasten? "))
-drank = True
-chips = False
-NAAM = "Felicia"
-SLB = "Jouke"
+gastheer = True
+gasten = True
+drank = False
+chips = True
 
-if drank and gastheer or chips and drank and gasten or gastheer == NAAM and not SLB == gastheer and gasten >= 5 and gasten < 20:
+if chips and drank or gasten and chips and drank or gastheer and drank or gastheer and gasten and chips and drank:
     print('Start the Party')
 else:
     print('No Party')
