@@ -9,13 +9,24 @@ acrobatiek = int(input("Hoeveel jaren praktijkervaring heb je met acrobatiek? ")
 mbo_4 = input("Ben je in het bezit van een MBO-4 diploma ondernemen? Y/N ").lower()
 ondernemer = int(input("Hoelang ben u een ondernemer, vul in hele jaren in: "))
 werknemer = int(input("Hoeveel werknemers heeft u? "))
-man = input("bent u een man? Y/N ")
-snor = int(input("Hoe breed is uw snor? Vul in hele getallen in: "))
-vrouw = input("Bent u een vrouw? ")
-haar_kleur = input("Wat is uw haarkleur? ")
-haar_lengte = input ("Hoelang is uw haar? ")
-anders = input("Is uw gender niet man of vrouw? Y/N")
-glimlach = int(input("Hoe breed is uw glimlach? "))
+
+man = input("bent u een man? Y/N")
+if man == "Y":
+    snor = int(input("Hoe breed is uw snor? Vul in hele getallen in: "))
+else:
+    snor = ""
+
+vrouw = input("Bent u een vrouw? Y/N ")
+if vrouw == "Y":
+    haar_kleur = input("Wat is uw haarkleur? ")
+    haar_lengte = input("Hoelang is uw haar? ")
+else:
+    haar_kleur = ""
+    haar_lengte = 0
+
+anders = input("Is uw gender niet man of vrouw? Y/N ")
+if anders == "Y":
+    glimlach = int(input("Hoe breed is uw glimlach? "))
 
 MAX_WEIGHT = 120
 MIN_WEIGHT = 90
@@ -53,10 +64,11 @@ anders_ok = anders == "y"
 glimlach_ok = glimlach >= GLIMLACH
 
 
-if (rijbewijs_ok and hoed_ok and certificaat_ok and lichaamsgewicht_ok and lengte_ok and
-    dieren_dressur_ok and jongleren_ok and acrobatiek_ok and
-    mbo_4_ok and ondernemer_ok and werknemer_ok and
-    snor_ok and haar_kleur_ok and haar_lengte_ok and glimlach_ok):
+if (rijbewijs_ok and hoed_ok and lichaamsgewicht_ok and certificaat_ok) and (mbo_4_ok or ondernemer_ok and werknemer_ok) and (man_ok and snor_ok) or (vrouw_ok and haar_kleur_ok and haar_lengte_ok) or (anders_ok and glimlach_ok) and (dieren_dressur_ok or jongleren_ok or acrobatiek_ok): 
+#rijbewijs_ok and hoed_ok and certificaat_ok and lichaamsgewicht_ok and lengte_ok and
+#     dieren_dressur_ok and jongleren_ok and acrobatiek_ok and
+#     mbo_4_ok and ondernemer_ok and werknemer_ok and
+#     snor_ok and haar_kleur_ok and haar_lengte_ok and glimlach_ok:
     print("Gefeliciteerd, u komt in aanmerking voor een sollicitatiegesprek.")
 else:
     if not rijbewijs_ok:
