@@ -2,19 +2,53 @@
 #Opdracht Pizza Calculator
 
 #Prijzen van de pizza's
-SMALL_PIZZA = 6.99
-MEDIUM_PIZZA = 8.49
-LARGE_PIZZA = 11.99
+while True:
+    try:
+        small_pizza = float(input("Hoeveel kost een kleine pizza? "))
+        break
+    except ValueError:
+        print("Ongeldigde invoer, hoeveel een kleine pizza? ")
+
+while True:
+    try:
+        medium_pizza = float(input("Hoeveel kost een medium pizza? "))
+        break
+    except ValueError:
+        print("Ongeldige invoer, hoeveel kost een medium pizza? ")
+
+while True:
+    try:
+        large_pizza = float(input("Hoeveel kost een groote pizza? "))
+        break
+    except ValueError:
+        print("Ongeldige invoer, hoeveel kost een groote pizza? ")
 
 #Input van de aantallen voor de pizza's 
-aantal_small_pizza = int(input("Hoeveel kleine pizza's wil je? "))
-aantal_medium_pizza = int(input("Hoeveel medium pizza's wil je? "))
-aantal_large_pizza = int(input("Hoeveel large pizza's wil je? "))
+while True:
+    try:
+        aantal_small_pizza = int(input("Hoeveel kleine pizza's wil je? "))
+        break
+    except ValueError:
+        print("Ongeldige invoer, hoeveel kleine pizza's wil je? ")
+
+while True:
+    try:
+        aantal_medium_pizza = int(input("Hoeveel medium pizza's wil je? "))
+        break
+    except ValueError:
+        print("Ongeldige invoer, hoeveel medium pizza's wil je? ")
+
+while True:
+    try:
+        aantal_large_pizza = int(input("Hoeveel large pizza's wil je? "))
+        break
+    except ValueError:
+        print("Ongeldige invoer, hoeveel groote pizza's wil je? ")
 
 #prijzen voor de pizza's
-prijs_small = aantal_small_pizza * SMALL_PIZZA
-prijs_medium = aantal_medium_pizza * MEDIUM_PIZZA
-prijs_large = aantal_large_pizza * LARGE_PIZZA
+prijs_small = aantal_small_pizza * small_pizza
+prijs_medium = aantal_medium_pizza * medium_pizza
+prijs_large = aantal_large_pizza * large_pizza
 totaal_prijs_pizza = (prijs_small + prijs_medium + prijs_large)
 
 #Totaa; prijs 
