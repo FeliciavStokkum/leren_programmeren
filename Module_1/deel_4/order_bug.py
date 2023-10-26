@@ -4,14 +4,14 @@ def vraag_getal(volgorde):
     return getal
 
 def deel_getallen(getal_1, getal_2):
-    if getal_2 == 0:
+    if getal_2 == 0 or getal_1 == 0:
         print("Kan niet delen door 0")
         return None
     resultaat = getal_1 / getal_2
     return resultaat
 
-getal_2 = vraag_getal("tweede")
 getal_1 = vraag_getal("eerste")
+getal_2 = vraag_getal("tweede")
 
 resultaat = deel_getallen(getal_1, getal_2)
 
