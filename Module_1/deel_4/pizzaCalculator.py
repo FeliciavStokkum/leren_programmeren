@@ -49,7 +49,7 @@ while True:
 prijs_small = aantal_small_pizza * small_pizza
 prijs_medium = aantal_medium_pizza * medium_pizza
 prijs_large = aantal_large_pizza * large_pizza
-totaal_prijs_pizza = (prijs_small + prijs_medium + prijs_large)
+totaal_prijs_pizza = round(prijs_small + prijs_medium + prijs_large, 2)
 
 #Totaa; prijs 
 bestelde_pizza_small = print(f"Je hebt {aantal_small_pizza} kleine pizza's besteld, dit kost {prijs_small}")
