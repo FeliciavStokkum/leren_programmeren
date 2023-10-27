@@ -20,7 +20,7 @@ from test_lib import *
 # test(name, expect_content, calculated_content )
 
 # report()
-#-------------------------------------------------------------------------
+# # -------------------------------------------------------------------------
 
 # def afronden_naar_5(bedrag):
 #     AFRONDEN_CENTEN = 5
@@ -31,7 +31,7 @@ from test_lib import *
 # resultaat = afronden_naar_5(bedrag)
 # print(resultaat)
 
-#-----------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
 
 month_discount_brands = 'Vespa,Kymco,Yamama'
 MONTH_DISCOUNT_PERC = 10
