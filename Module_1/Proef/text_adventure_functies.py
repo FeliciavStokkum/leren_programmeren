@@ -88,4 +88,7 @@ def welk_pad():
     print("pad 1: donker en onveilig")
     print("Pad 2: gezellig en veilig")
 
-    #met je zaklamp, merk je meteen een donker pad op dat perkt tot in de diepte van het bos. Wat is je volgende stap?")
+#met je zaklamp, merk je meteen een donker pad op dat perkt tot in de diepte van het bos. Wat is je volgende stap?")
+
+def lichte_pad():
+    print("")

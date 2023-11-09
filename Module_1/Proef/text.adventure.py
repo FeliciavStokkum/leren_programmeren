@@ -38,24 +38,35 @@ wat_neem_je_mee()
 keuze = input("Wat neem je mee? (1,2,3) ")
 
 if keuze == "1":
-    welk_pad
-    answer = input("Welk pad? (1/2)")
-
-    if answer == "1":
-        donker_pad()
-        answer = input("welk route")
-        if answer == '!':
-            welke_richting
-    elif answer != "1":
-        lichte_pad()
-
+    print("Je hebt gekozen voor de zaklamp, goede keuze! ")
+    welk_pad()
 elif keuze == "2":
-    welke_richting()
-elif keuze == "3":
-    mysterieuze_geluiden()
-else:
-    print("Ongeldige invoer, probeer opnieuw!")
-    wat_neem_je_mee()
+    print("Je hebt gekozen voor een broodtrommel en een flesje water")
+    welk_pad()
+
+# if keuze == "1":
+#     welk_pad
+#     answer = input("Welk pad? (1/2)")
+
+#     if answer == "1":
+#         donker_pad()
+#         print("Je hebt gekozen voor de zaklamp, goede keuze! ")
+#         answer = input("welk route")
+#         if answer == '1':
+#             welke_richting()
+#     elif answer == "2":
+#         lichte_pad()
+
+#     else:
+#         print("ongeldige invoer.")
+
+# elif keuze == "2":
+#     welke_richting()
+# elif keuze == "3":
+#     mysterieuze_geluiden()
+# else:
+#     print("Ongeldige invoer, probeer opnieuw!")
+#     wat_neem_je_mee()
 
 donker_pad()
 
