@@ -14,8 +14,8 @@ def donkere_pad():
     print("3: je besluit om hier te blijven wachten, tot je zeker weet dat het veilig is.")
 
 def glinstering():
-    print("Terwijl je een andere route hebt gekozen zie je een vreemde glinstering in het bos. Je hebt de volgende opties")
-    print("1. Je onderzoekt de glinstering nader")
+    print("\nTerwijl je een andere route hebt gekozen zie je een vreemde glinstering in het bos. Je hebt de volgende opties")
+    print("\n1. Je onderzoekt de glinstering nader")
     print("2. Je zoekt naar een andere route, je gaat terug naar het donkere pad.")
     
 def welke_richting():
@@ -29,24 +29,39 @@ def mysterieuze_geluiden():
     print("Optie 2: Je gaat een andere kant op, je vind het er toch spannend uit zien en durft het niet aan.")
 
 def bomen_bewegen():
-    print("Je bent rechtdoor gegaan, hier merk je dat de bomen beginnen te bewegen. Ook hoor je wat geritsel, wat ga je doen?")
-    print("1. Je keert je om je vind het maar vreemd.")
+    print("\nJe bent terug gegaan naar het donkere pad, hier merk je dat de bomen beginnen te bewegen. Ook hoor je wat geritsel, wat ga je doen?")
+    print("\n1. Je keert je om je vind het maar vreemd.")
     print("2. Je bent nieuwsgierig en gaat op onderzoek uit.")
 
 def puzzel():
-    print("Je hebt besloten om de glinstering te onderzoeken, je loopt dichterbij en je ontmoet een fee. Deze fee zegt tegen jou als je door wilt gaan, moet je mijn puzzel maken. ")
+    print("\nJe hebt besloten om de glinstering te onderzoeken, je loopt dichterbij en je ontmoet een fee. \nDeze fee zegt tegen jou als je door wilt gaan, moet je mijn puzzel maken. ")
     print("Puzzel = Ik ben groot als ik jong ben, maar ik ben klein als ik oud ben. Wat ben ik? ")
 
 def huisje():
-    print("Je mocht verder van de fee! Je hebt de puzzel dus opgelost. Als je verder loopt zie je een huisje staan. Dit huisje ziet er niet verwelkomend uit, maar je gaat er toch heen.Misschien zit de dorpeling wel hier, vraag je jezelf af. Je doet de deur open, maar je treft een geest aan. ")
-    print("Optie 1. Je praat met de geest, misschien heeft deze wel waardevolle informatie voor jou")
+    print("\nJe mocht verder van de fee! Je hebt de puzzel dus opgelost. \nAls je verder loopt zie je een huisje staan. \nDit huisje ziet er niet verwelkomend uit, maar je gaat er toch heen. \nMisschien zit de dorpeling wel hier, vraag je jezelf af. \nJe doet de deur open, maar je treft een geest aan. ")
+    print("\nOptie 1. Je praat met de geest, misschien heeft deze wel waardevolle informatie voor jou")
     print("Optie 2. Je gaat het huisje verder onderzoeken en probeert de geest te negeren.")
 
 def luistert_aandachtig():
-    print("Je hebt besloten om even te wachten tot het veilig is. Na enkele minuten te hebben gewacht, merk je dat er niks aan de hand is.")
-    print("1. Je gaat verder met het verkennen van het donkere pad, aangezien het nu veilig is")
-    print("2. Je vind het niet veilig genoeg en je gaat terug naar het dorp")
+    print("\nJe hebt besloten om even te wachten tot het veilig is. \nNa enkele minuten te hebben gewacht, merk je dat er niks aan de hand is.")
+    print("\n1. Je gaat verder met het verkennen van het donkere pad, aangezien het nu veilig is")
+    print("2. Je vind het niet veilig genoeg en je keert je om.")
 
 def boom():
-    print(
-    "Er ligt helaas een boom op de weg, dit had je niet kunnen zien door het donkere pad, helaas kan je hier niet om heen, je moet dus terug keren om opnieuw te beginnen. ")
+    print("\nEr ligt helaas een boom op de weg, dit had je niet kunnen zien door het donkere pad, helaas kan je hier niet om heen, je moet dus terug keren om opnieuw te beginnen. ")
+
+def wineinde():
+    print("\nje praat met de geest, hierdoor kom je erachter dat er een dorpeling in het huis zit verstopt. Dit is goed nieuws voor jou! Je gaat opzoek naar de dorpeling, na een paar minuutjes heb je hem gevonden! Gefeliciteerd, je hebt het einde behaald.")
+
+def heks():
+     print("\nJe koos ervoor om je om te keren, omdat je het vreemd vind. Maar helaas nadat je besloot om je terug te keren werd je gevangen door een heks. Hierdoor is jouw missie beeindigd. game over.")
+
+def onderzoeken ():
+    print("\nJe gaat op onderzoek uit naar het geritsel, hier zie je een dier staan, dit dier spreekt je aan. Je vind het maar wat vreemd, maar je vraagt toch naar de dorpeling.")
+    print("\nHet dier vertelt jou dat je opzoek moet naar een huisje in dit bos, je loopt dus verder, na ongeveer een kilometer te lopen zie je een glinstering in het bos, je denkt misschien is dat het huisje wel, je gaat erheen. ")
+
+def verlichte_pad():
+    print("\nJe stond op het kruispunt en je hebt gekozen voor het verlichte pad Dat is een goede keuze, aangezien je geen zaklamp bij je hebt.")
+    print("\nTerwijl je verder loopt zie je een huisje in de verte staan, je hebt besloten dit huisje te onderzoeken.")
+    print("\nin dit huisje kom je een fee tegen, van deze fee moet je eerst een puzzel oplossen om verder te mogen.")
+    print("\nHet raadsel gaat als volgt: Ik ben groot als ik jong ben, maar ik ben klein als ik oud ben. Wat ben ik? ")
