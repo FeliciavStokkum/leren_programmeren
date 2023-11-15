@@ -8,6 +8,7 @@
 
 # raketlancering = print("De raket is gelanceert!")
 
-for getal in range(30, 1,):
-   
-    print(getal )
+for getal in range(30, 1, -1):
+    print(getal) 
+
+print("\nLancering!")
