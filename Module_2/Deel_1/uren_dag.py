@@ -7,5 +7,5 @@
 for ochtend in range(1, 13):
     print(f"{ochtend} AM")
     if ochtend == 12:
-        for middag in range(13, 25):
+        for middag in range(1, 13):
             print(f"{middag} PM")

@@ -2,6 +2,7 @@ from RobotArm import RobotArm
 
 robotArm = RobotArm('exercise 6')
 robotArm.moveRight()
+
 for i in range(6):
     robotArm.grab()
     color = robotArm.scan()
@@ -15,3 +16,4 @@ for i in range(6):
         robotArm.moveLeft()
 
 robotArm.wait()
+

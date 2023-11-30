@@ -34,4 +34,5 @@ for e in range(2):
     robotArm.moveRight()
 
 robotArm.drop()
-robotArm.wait
+
+robotArm.wait()
