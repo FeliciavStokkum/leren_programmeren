@@ -8,6 +8,9 @@ print("\nDit zijn de werkdagen:")
 for werkdagen in dagen_van_de_week[:5]:
     print(werkdagen)
 
+# for i in range(0, 7, 2 ):
+#     print(dagen_van_de_week[i])
+
 print("\nDit zijn de dagen in omgekeerde volgorde:")
 for omgekeerde_dagen in dagen_van_de_week[::-1]:
     print(omgekeerde_dagen)
@@ -17,5 +20,5 @@ for omgekeerde_werkdagen in dagen_van_de_week[4::-1]:
     print(omgekeerde_werkdagen)
 
 print("\nDit zijn de weekenddagen omgekeerd:")
-for omgekeerde_weekenddagen in dagen_van_de_week[-1:4:-1]:
+for omgekeerde_weekenddagen in dagen_van_de_week[6:4:-1]:
     print(omgekeerde_weekenddagen)
