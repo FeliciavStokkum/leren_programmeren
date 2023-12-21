@@ -1,7 +1,21 @@
-kleuren = ["rood", "blauw", "groen", "geel", "bruin"]
+from random import choice
 
-hoeveel = int(input("Hoeveel m&m's moeten er in de zak worden toegevoegd? "))
+kleuren = ("rood", "blauw", "groen", "geel", "bruin")
 
-bagofMnMs = {
-    
-}
+aantal_mnm = int(input("Hoeveel m&m wil je toevoegen? "))
+kleuren_mnm = []
+
+zak_mnm = {}
+
+for i in range(aantal_mnm):
+    kleuren_mnm.append(choice(kleuren))
+
+for kleur in kleuren_mnm:
+    if kleur in zak_mnm:
+        zak_mnm[kleur] += 1
+    else:
+        zak_mnm[kleur] = 1
+
+print("Dit zijn de kleuren die in de zak zitten: ")
+for kleur, aantal in zak_mnm.items():
+    print(f"{kleur}: {aantal}")
