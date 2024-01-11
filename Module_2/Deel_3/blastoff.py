@@ -7,3 +7,4 @@ while num >= 1:
     time.sleep(1)
     num -= 1
 
+print("Raket is gelanceerd!")
