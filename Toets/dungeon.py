@@ -21,7 +21,7 @@ antwoord_som = getal_1 + getal_2
 
 print('Je stapt door de deur heen en je ziet een standbeeld voor je.')
 print('Het standbeeld heeft een sleutel vast.')
-print('Op zijn borst zit een numpad met de toesten 9 t/m 0.')
+print('Op zijn borst zit een numpad met de toetsen 9 t/m 0.')
 print(f'Daarboven zie je een som staan {getal_1} + {getal_2}?')
 antwoord = int(input('Wat toets je in?'))
 
@@ -35,7 +35,7 @@ print('Je zie een deur achter het standbeeld.')
 print('')
 time.sleep(1)
 
-# === [kamer 3] === #
+# === [kamer 6] === #
 item_lijst = ["schild", "zwaard"]
 item = (random.choice(item_lijst))
 
@@ -44,14 +44,6 @@ if item == "schild":
 elif item == "zwaard":
     player_attack += 2
 
-print('Je duwt hem open en stap een hele lange kamer binnen.')
-print(f'In deze kamer staat een tafel met daarop een {item}.')
-print(f'Je pakt het {item} op en houd het bij je.')
-print('Op naar de volgende deur.')
-print('')
-time.sleep(1)
-
-# === [kamer 4] === #
 zombie_attack = 1
 zombie_defense = 0
 zombie_health = 2
@@ -73,6 +65,48 @@ else:
         print(f'Je health is nu {player_health}.')
     else:
         print('Helaas is de zombie te sterk voor je.')
+        print('Game over.')
+        exit()
+print('')
+time.sleep(1)
+
+# === [kamer 3] === #
+item_lijst = ["schild", "zwaard"]
+item = (random.choice(item_lijst))
+
+if item == "schild":
+    player_defense += 1
+elif item == "zwaard":
+    player_attack += 2
+
+print('Je duwt hem open en stap een hele lange kamer binnen.')
+print(f'In deze kamer staat een tafel met daarop een {item}.')
+print(f'Je pakt het {item} op en houd het bij je.')
+print('Op naar de volgende deur.')
+print('')
+time.sleep(1)
+
+# === [kamer 4] === #
+trol_attack = 2
+trol_defense = 0
+trol_health = 3
+print('Je loopt verder in de kamer, hier kom je een trol tegen.')
+
+trol_hit_damage = (trol_attack - player_defense)
+if trol_hit_damage <= 0:
+    print('Jij hebt een te goede verdediging voor de trol, hij kan je geen schade doen.')
+else:
+    trol_attack_amount = math.ceil(player_health / trol_hit_damage)
+    
+    trol_hit_damage = (player_attack - trol_defense)
+    player_attack_amount = math.ceil(trol_health / trol_hit_damage)
+
+    player_health = player_attack_amount * trol_hit_damage
+    if player_attack_amount < trol_attack_amount:
+        print(f'In {player_attack_amount} rondes versla je de zombie.')
+        print(f'Je health is nu {player_health}.')
+    else:
+        print('Helaas is de trol te sterk voor je.')
         print('Game over.')
         exit()
 print('')
