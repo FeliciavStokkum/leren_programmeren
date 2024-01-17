@@ -23,7 +23,7 @@ for woord in woorden_in_tekst:
 vertaalde_zin = " ".join(vertaalde_woorden)
 
 for omgekeerde_tekst in vertaalde_woorden[-1]:
-    print(omgekeerde_tekst)
+    print(omgekeerde_tekst)  
 
 print("Vertaalde tekst: ")
 print(vertaalde_zin)
