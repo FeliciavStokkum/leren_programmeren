@@ -31,24 +31,14 @@ if antwoord == antwoord_som:
 else:
     print('Er gebeurt niets....')
 
-print('Je zie een deur achter het standbeeld.')
+print('Je ziet een deur achter het standbeeld.')
 print('')
 time.sleep(1)
 
 # === [kamer 6] === #
-item_lijst = ["schild", "zwaard"]
-item = (random.choice(item_lijst))
-
-if item == "schild":
-    player_defense += 1
-elif item == "zwaard":
-    player_attack += 2
-
 zombie_attack = 1
 zombie_defense = 0
 zombie_health = 2
-print(f'Dapper met je nieuwe {item} loop je de kamer binnen.')
-print('Je loopt tegen een zombie aan.')
 
 zombie_hit_damage = (zombie_attack - player_defense)
 if zombie_hit_damage <= 0:
@@ -79,7 +69,7 @@ if item == "schild":
 elif item == "zwaard":
     player_attack += 2
 
-print('Je duwt hem open en stap een hele lange kamer binnen.')
+print('Je duwt de deur open en stap een hele lange kamer binnen.')
 print(f'In deze kamer staat een tafel met daarop een {item}.')
 print(f'Je pakt het {item} op en houd het bij je.')
 print('Op naar de volgende deur.')
