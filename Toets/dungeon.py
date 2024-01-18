@@ -6,12 +6,22 @@ player_defense = 0
 player_health = 3
 
 player_key = 0
+rupee = 0
 
 # === [kamer 1] === #
+print("")
 print('Door de twee grote deuren loop je een gang binnen.')
 print('Het ruikt hier muf en vochtig.')
 print('Je ziet een deur voor je.')
 print('')
+time.sleep(1)
+
+# === [Kamer 7] === #
+print("Je krijgt een rupee, hier kan je verder in het spel dingen van halen. ")
+print("Dit kan alleen bij een verkooppunt. ")
+rupee += 1
+print(f"Je hebt nu {rupee} rupee")
+print("")
 time.sleep(1)
 
 # === [kamer 2] === #
@@ -75,8 +85,10 @@ if deur_3 == True:
 if deur_3 == False:
     print("Je bent nu in kamer drie.")
 
-    item_lijst = ["schild", "zwaard"]
-    item = (random.choice(item_lijst))
+    print("Goblin: hoi! Ik ben een Goblin, ik verkoop verschillende dingen, voor nu kan je kiezen voor: een schild of een zwaard.")
+    print("Per item kost dit 1 rupee, kies verstandig!")
+
+    item = input("Wat kies je? zwaard/schild")
 
     if item == "schild":
         player_defense += 1
