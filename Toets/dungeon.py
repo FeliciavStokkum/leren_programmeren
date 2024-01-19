@@ -10,6 +10,7 @@ deur_1 = False
 kamer_3 = False
 keuze_kamer_3 = False
 keuze_richting = False
+deur_4 = False
 
 # === [kamer 1] === #
 print("---- Je bent nu in kamer 1 ----")
@@ -112,41 +113,41 @@ if deur_1:
         print("Je hebt gekozen om naar kamer 3 te gaan. ")
 
 # === [kamer 8] === #
-if keuze_richting == "rechts" or deur_1 == False:
-    print("---- Je bent nu in kamer 8 ----")
-    print("Als je de kamer binnen loopt zie je een gokmachine. Wil je de gokmachine gebruiken? ")
+    if keuze_richting == "rechts" or deur_1 == False:
+        print("---- Je bent nu in kamer 8 ----")
+        print("Als je de kamer binnen loopt zie je een gokmachine. Wil je de gokmachine gebruiken? ")
 
-    gokken = input("Wil je de gokmachine gebruiken? ja / nee ")
+        gokken = input("Wil je de gokmachine gebruiken? ja / nee ")
 
-    while gokken != 'nee':
-        dobbelsteen1 = random.randint(1, 6)
-        dobbelsteen2 = random.randint(1, 6)
-        totaal = dobbelsteen1 + dobbelsteen2
+        while gokken != 'nee':
+            dobbelsteen1 = random.randint(1, 6)
+            dobbelsteen2 = random.randint(1, 6)
+            totaal = dobbelsteen1 + dobbelsteen2
 
-        if totaal > 7:
-            print(f'Gefeliciteerd! Je hebt meer dan 7 gegooid, dus je verdubbelt het aantal ruppees.')
-            rupee *= 2
-            print(f'Je hebt nu {rupee} rupees.')
-        elif totaal < 7:
-            print('Helaas, je hebt minder dan 7 gegooid. Je verliest 1 health.')
-            player_health -= 1
-            print(f'Je health is nu {player_health}.')
+            if totaal > 7:
+                print(f'Gefeliciteerd! Je hebt meer dan 7 gegooid, dus je verdubbelt het aantal ruppees.')
+                rupee *= 2
+                print(f'Je hebt nu {rupee} rupees.')
+            elif totaal < 7:
+                print('Helaas, je hebt minder dan 7 gegooid. Je verliest 1 health.')
+                player_health -= 1
+                print(f'Je health is nu {player_health}.')
 
-        else:
-            print('Oei, het totaal is 7. Je verdubbelt het aantal rupees die je hebt, maar verliest ook 1 health.')
-            rupee *= 2
-            player_health -= 1
-            print(f'Je hebt nu {rupee} rupees en je health is {player_health}.')
+            else:
+                print('Oei, het totaal is 7. Je verdubbelt het aantal rupees die je hebt, maar verliest ook 1 health.')
+                rupee *= 2
+                player_health -= 1
+                print(f'Je hebt nu {rupee} rupees en je health is {player_health}.')
                                     
-            if player_health == 0:
-                print("Helaas, je hebt verloren! Volgende keer beter")
-                exit()
-            gokken = input("Wil je de gokmachine nog een keer gebruiken? ja / nee ")
+                if player_health == 0:
+                    print("Helaas, je hebt verloren! Volgende keer beter")
+                    exit()
+                gokken = input("Wil je de gokmachine nog een keer gebruiken? ja / nee ")
                 
-    if gokken == "nee":
-        keuze_kamer_3 = input("Wil je door naar kamer 3? ja/ nee ")
-        if keuze_kamer_3 == "ja":
-            print("Je hebt gekozen voor kamer 3")
+        if gokken == "nee":
+            keuze_kamer_3 = input("Wil je door naar kamer 3? ja/ nee ")
+            if keuze_kamer_3 == "ja":
+                print("Je hebt gekozen voor kamer 3")
 
 # === [kamer 9] === #
     if kamer_3 == "nee" or keuze_kamer_3 == "nee":
@@ -191,27 +192,33 @@ if kamer_3 == "ja" or keuze_kamer_3 == "ja":
             if selected_item != 'niks':
                 print(f'In deze kamer staat een tafel met daarop een {selected_item}.')
                 print(f'Je pakt het {selected_item} op en houdt het bij je.')
-                print('Op naar de volgende deur.')
+                deur_4 = input(print('wil je naar kamer 4?'))
                 print('')
-                time.sleep(1) 
+                time.sleep(1)
+
+            if deur_4 == "ja":
+                print("Je hebt gekozen voor kamer 4")
+            
 
 # === [kamer 4] === #
-print("---- Je bent nu in kamer 4 ----")
-trol_attack = 2
-trol_defense = 0
-trol_health = 3
-print('Je loopt verder in de kamer, hier kom je een trol tegen.')
+if deur_4:
+    print("---- Je bent nu in kamer 4 ----")
+    trol_attack = 2
+    trol_defense = 0
+    trol_health = 3
+    print('Je loopt verder in de kamer, hier kom je een trol tegen.')
 
-trol_hit_damage = max(trol_attack - player_defense, 0)
-if trol_hit_damage <= 0:
-    print('Jij hebt een te goede verdediging voor de trol, hij kan je geen schade doen.')
-else:
-    trol_attack_amount = math.ceil(player_health / trol_hit_damage)
-                    
-    player_hit_damage = max(player_attack - trol_defense, 0)
-    player_attack_amount = math.ceil(trol_health / player_hit_damage)
+    trol_hit_damage = max(trol_attack - player_defense, 0)
 
-    player_health -= player_attack_amount * trol_hit_damage
+    if trol_hit_damage <= 0:
+        print('Jij hebt een te goede verdediging voor de trol, hij kan je geen schade doen.')
+    else:
+        trol_attack_amount = math.ceil(player_health / trol_hit_damage)
+                        
+        player_hit_damage = max(player_attack - trol_defense, 0)
+        player_attack_amount = math.ceil(trol_health / player_hit_damage)
+
+        player_health -= player_attack_amount * trol_hit_damage
 
     if player_health > 0:
         print(f'In {player_attack_amount} rondes versla je de trol.')
@@ -231,13 +238,13 @@ dungeon_boss_defence = 1
 dungeon_boss_health = 5
 
 dungeon_boss_damage = (dungeon_boss_attack - player_defense)
-if dungeon_boss_damage <= 0:
+if dungeon_boss_damage < 0:
     print('Jij hebt een te goede verdediging voor de dungeon boss, hij kan je geen schade doen.')
 else:
     dungeon_boss_attack = math.ceil(player_health / dungeon_boss_damage)
                         
     player_hit_damage = max(player_attack - dungeon_boss_defence, 0)
-    player_attack_amount = math.ceil(dungeon_boss_health / player_hit_damage)
+    player_attack_amount = math.floor(dungeon_boss_health / player_hit_damage)
 
     player_health -= player_attack_amount * dungeon_boss_damage
 
@@ -248,7 +255,13 @@ else:
         print('Helaas is de dungeon boss te sterk voor je.')
         print('Game over.')
         exit()
+
+    if player_hit_damage != 0:
+        player_attack_amount = math.floor(dungeon_boss_health / player_hit_damage)
+    else:
+        print("Players healt kan niet gelijk zijn aan 0")
     print('')
+    
     time.sleep(1)
 
 # === [kamer 5] === #
