@@ -1,8 +1,10 @@
-getal = 50
+nummer = 50
 totaal = 0
 
-for aantal in range(getal):
-    totaal += getal + 1
+uitvoer = f"{nummer}"
 
-while getal < 1000:
-    print(f"{getal} + {getal} = {totaal}")
+while totaal < 1000:
+    totaal += nummer
+    nummer += 1
+    uitvoer += f" + {nummer}"
+    print(f"{uitvoer} = {totaal}")
