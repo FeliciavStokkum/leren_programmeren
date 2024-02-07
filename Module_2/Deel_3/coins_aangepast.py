@@ -2,6 +2,8 @@ toPay = int(float(input('Amount to pay: '))* 100)
 paid = int(float(input('Paid amount: ')) * 100)
 change = paid - toPay 
 
+overzicht_muntstukken = {}
+
 if change > 0:
   coinValue = 500
   
@@ -32,6 +34,10 @@ if change > 0:
       
     else:
       coinValue = 0
+
+overzicht_muntstukken = {
+
+}
 
 if change > 0: 
   print('Change not returned: ', str(change) + ' cents')
