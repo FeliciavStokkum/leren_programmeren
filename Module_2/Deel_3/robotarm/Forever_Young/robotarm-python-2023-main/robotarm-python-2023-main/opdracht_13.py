@@ -10,11 +10,11 @@ while True:
     if blok == "":
         break
     else:
-        stappen += 1
         for x in range(stappen):
             robotArm.moveRight()
         robotArm.drop()
         for i in range(stappen):
             robotArm.moveLeft()
+        stappen += 1
         
 robotArm.wait()
