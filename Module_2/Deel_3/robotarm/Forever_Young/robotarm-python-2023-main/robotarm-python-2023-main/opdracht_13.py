@@ -7,7 +7,9 @@ stappen = 1
 while True:
     robotArm.grab()
     blok = robotArm.scan()
-    if blok == "":
+    if blok == "blue" or blok == "":
+        if blok == "blue":
+            robotArm.drop()
         break
     else:
         for x in range(stappen):

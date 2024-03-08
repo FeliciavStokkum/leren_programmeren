@@ -1,17 +1,17 @@
 boodschappenlijstje = {}
 
 while True:
-    artikel = input("Welk artikel wilt u toevoegen? ")
+    artikel = input("Welk artikel wilt u toevoegen? ").lower()
     hoeveel = int(input(f"Hoeveel {artikel} wilt u toevoegen? "))
 
-    if artikel.lower() in boodschappenlijstje:
-        boodschappenlijstje[artikel.lower()] += hoeveel 
+    if artikel in boodschappenlijstje:
+        boodschappenlijstje[artikel] += hoeveel 
     else:
-        boodschappenlijstje[artikel.lower()] = hoeveel
+        boodschappenlijstje[artikel] = hoeveel
 
     print(f"{artikel} is toegevoegd aan uw boodschappenlijstje")
-    toevoegen = input("Wilt u nog meer artikelen toevoegen? ")
-    if toevoegen.lower() == "nee":
+    toevoegen = input("Wilt u nog meer artikelen toevoegen? ").lower()
+    if toevoegen == "nee":
         break
 
 print("")
