@@ -38,12 +38,12 @@ else:
                 print(f"Alsjeblieft je cola, dat is dan €{PRIJS_COLA}.")
 
         elif drinken_input == "bier":
-            if leeftijd_input < 21:
-                aantal_jaar_21 = 21 - leeftijd_input
-                print(f"Sorry geen alcohol voor jou. Kom over {aantal_jaar_21} jaar terug")
+            if bandje == "blauw" or bandje == "rood":
+                print(complimenten)
             else:
-                if bandje == "blauw" or bandje == "rood":
-                    print(complimenten)
+                if leeftijd_input < 21:
+                    aantal_jaar_21 = 21 - leeftijd_input
+                    print(f"Sorry geen alcohol voor jou. Kom over {aantal_jaar_21} jaar terug")
                 elif stempel:
                     print(f"Alsjeblieft je {DRANKJES[1]}. Dat is dan €{PRIJS_BIER}.")
         
