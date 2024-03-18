@@ -5,14 +5,13 @@ rounds = 0
 
 while rounds < 20:
     secret_number = random.randint(1, 1000)
-    print(secret_number)
+    print(f"The secret number is: {secret_number}")
 
-    guesses = 0
-    while guesses < 10:
-
+    guesses_left = 10
+    while guesses_left > 0:
         guess = 0
-        while guess is 0:
-            guess = input("Guess a number between 1 and 1000 (type 'quit' to quit): ")
+        while guess == 0:
+            guess = input(f"Guess a number between 1 and 1000 (type 'quit' to quit): ")
 
             if guess == "quit":
                 print(f"Your final score is: {score}")
@@ -23,25 +22,29 @@ while rounds < 20:
                 print("Invalid input. Please enter a number.")
                 guess = 0
 
-        if guess is 0:
+        if guess == 0:
             break
         if guess < 1 or guess > 1000:
             print("Invalid range. Please enter a number between 1 and 1000.")
             continue
 
         difference = abs(guess - secret_number)
-        guesses += 1
 
-        if difference <= 50 and difference >20:
-            print("Warm!")
+        guesses_left -= 1
+        if difference <= 50 and difference > 20:
+            print(f"Warm!")
+            print()
         if difference <= 20:
-            print("Very warm!")
+            print(f"Very warm!")
+            print()
         if guess < secret_number:
-            print("Too low. Try again.")
+            print(f"Too low. Try again. You have {guesses_left} guesses left.")
+            print()
         elif guess > secret_number:
-            print("Too high. Try again.")
+            print(f"Too high. Try again. You have {guesses_left} guesses left.")
+            print()
         else:
-            print("Congratulations! You guessed the number.")
+            print(f"Congratulations! You guessed the number in {20 - guesses_left} guesses!")
             score += 1
             break
 
