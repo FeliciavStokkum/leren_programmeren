@@ -1,0 +1,45 @@
+Hier word random geimporteerd
+
+hier worden de scores bijgehouden
+hier worden de rondes bijgehouden
+hier worden de laatste rondes benoemd
+hier worden de pogingen per ronde benoemd
+
+while de rondes kleiner zijn als de maximale rondes
+    hier wordt een random getal opgeslagen tussen de 1 en de 1000
+    hier word benoemd wat de pogingen over is, dat zijn dus de pogingen per ronde
+    print in welke ronde je zit en hoeveel pogingen je nog over hebt
+
+    while pogingen groter als 0
+        print een random getal, wat je bij regel 9 hebt opgeslagen en gegenereert
+        hier gaat hij de volgende regels proberen (bij regel 32 controleert hij het)
+        hier word er gevraagd om een getal in te voeren en worden de pogingen berekend
+        hier worden de pogingen over min 1 gedaan
+        hier word het verschil berekend 
+
+        als de pogingen gelijk is aan het random getal
+            print jij hebt het geraden
+            score + 1
+            hier word de while lus beindigd en gaat hij naar de eerste loop
+        als het verschil tussen de poging en het random getal kleiner is dan 20 
+            print je bent heel warm
+        als het verschil tussen de poging en het random getal kleiner is dan 50 
+            print je bent warm
+        als de poging kleiner is als het random getal
+            print hoger
+        als de poging groter is als het random getal
+            print lager
+        dit gaat over regel 15
+            print dat is geen geldige invoer, probeer het nog een keer
+
+    rondes + 1
+    Hier wordt de score geprint en in welke ronde je bent
+
+    als de rondes kleiner zijn dan de max rondes
+        hier wordt gevraagd of je nog een ronde wilt spelen
+        als het antwoord op een nieuwe ronde niet gelijk is aan ja
+            print de totale score en bedankt voor het spelen
+            hier wordt hij gestopt
+
+als rondes gelijk zijn aan de max rondes
+    print de maximaal aantal rondes en de totale score
