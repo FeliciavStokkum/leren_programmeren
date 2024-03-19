@@ -1,6 +1,4 @@
 import random
-
-#Toevoegen hoog en lager
 #Toevoegen nieuwe ronde meerdere input
 
 score = 0
@@ -24,11 +22,11 @@ while rondes < MAX_RONDES:
                 print("Je hebt het geraden! Gefeliciteerd.")
                 score += 1
                 break  
-            elif verschil <= 20:
+            if verschil <= 20:
                 print("Je bent heel warm.")
             elif verschil <= 50:
                 print("Je bent warm.")
-            elif poging < random_getal:
+            if poging < random_getal:
                 print("Hoger")
             elif poging > random_getal:
                 print("Lager")
@@ -39,10 +37,18 @@ while rondes < MAX_RONDES:
     print(f"\nJe score is: {score}. Je bent nu in ronde: {rondes}.")
 
     if rondes < MAX_RONDES:
-        nieuwe_ronde = input("Nog een ronde spelen? (ja/nee): ")
-        if nieuwe_ronde.lower() != "ja":
-            print(f"\nTotale score: {score}. Bedankt voor het spelen!")
+        print("Nog een ronde spelen? ")
+    while True:
+        vraag = input("(ja/ nee): ").lower()
+        if vraag in ['ja', 'nee']:
             break
+        else:
+            print("Antwoord alleen met 'ja' of 'nee'.")
+    if vraag == 'nee':
+        break
+
+print(f"Je bent gestopt, je score is nu {score} ")
 
 if rondes == MAX_RONDES:
     print(f"\nJe hebt het maximaal aantal rondes gespeeld. Totale score: {score}. Bedankt voor het spelen!")
+    
