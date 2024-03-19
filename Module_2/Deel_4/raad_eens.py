@@ -51,4 +51,3 @@ print(f"Je bent gestopt, je score is nu {score} ")
 
 if rondes == MAX_RONDES:
     print(f"\nJe hebt het maximaal aantal rondes gespeeld. Totale score: {score}. Bedankt voor het spelen!")
-    
