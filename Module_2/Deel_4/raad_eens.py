@@ -1,26 +1,29 @@
 import random
 
+#Toevoegen hoog en lager
+#Toevoegen nieuwe ronde meerdere input
+
 score = 0
 rondes = 0
-max_rondes = 20
-pogingen_per_ronde = 10
+MAX_RONDES = 20
+POGINGEN_PER_RONDE = 10
 
-while rondes < max_rondes:
+while rondes < MAX_RONDES:
     random_getal = random.randint(1, 1000)
-    pogingen_over = pogingen_per_ronde 
+    pogingen_over = POGINGEN_PER_RONDE 
     print(f"\nRonde {rondes + 1}. Je hebt {pogingen_over} pogingen over")
 
     while pogingen_over > 0:
         print(random_getal)
         try:
-            poging = int(input(f"Poging {pogingen_per_ronde - pogingen_over + 1}. Voer een getal in om te raden: "))
+            poging = int(input(f"Poging {POGINGEN_PER_RONDE - pogingen_over + 1}. Voer een getal in om te raden: "))
             pogingen_over -= 1
             verschil = abs(poging - random_getal)
 
             if poging == random_getal:
                 print("Je hebt het geraden! Gefeliciteerd.")
                 score += 1
-                break  #Beindigd de lus zodra het getal geraden is
+                break  
             elif verschil <= 20:
                 print("Je bent heel warm.")
             elif verschil <= 50:
@@ -35,11 +38,11 @@ while rondes < max_rondes:
     rondes += 1
     print(f"\nJe score is: {score}. Je bent nu in ronde: {rondes}.")
 
-    if rondes < max_rondes:
+    if rondes < MAX_RONDES:
         nieuwe_ronde = input("Nog een ronde spelen? (ja/nee): ")
         if nieuwe_ronde.lower() != "ja":
             print(f"\nTotale score: {score}. Bedankt voor het spelen!")
             break
 
-if rondes == max_rondes:
+if rondes == MAX_RONDES:
     print(f"\nJe hebt het maximaal aantal rondes gespeeld. Totale score: {score}. Bedankt voor het spelen!")
