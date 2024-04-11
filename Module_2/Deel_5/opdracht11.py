@@ -18,5 +18,16 @@ ronde_vruchten = 0
 niet_ronde_vruchten = 0
 
 for fruit in fruitmand:
-    if gekozen_kleur == fruit["color"]:
-        print(fruit)
+    if gekozen_kleur == fruit['color'] and fruit['round'] == True:
+        ronde_vruchten += 1
+    elif gekozen_kleur == fruit['color'] and fruit['round'] == False:
+        niet_ronde_vruchten += 1
+verschil = ronde_vruchten - niet_ronde_vruchten
+
+# Print vervolgens het volgende als er van de gekozen kleur het verschil van de vrucht:
+if verschil > 0:
+    print(f"Er zijn meer {abs(verschil)} ronde vruchten dan niet ronde vruchten in de kleur {gekozen_kleur}")
+elif verschil < 0:
+    print(f"Er zijn {abs(verschil)} minder ronde vruchten dan niet ronde vruchten in de kleur {gekozen_kleur}")
+elif verschil == 0:
+    print(f"Er zijn {ronde_vruchten} ronde vruchten en {niet_ronde_vruchten} niet ronde vruchten in de kleur {gekozen_kleur}")
