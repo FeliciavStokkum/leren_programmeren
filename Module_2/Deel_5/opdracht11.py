@@ -3,7 +3,9 @@ from fruitmand import *
 
 kleuren = []
 for fruit in fruitmand:
-    kleuren.append(fruit["color"])
+    if fruit['color'] not in kleuren:
+        kleuren.append(fruit["color"])
+print(kleuren)
 
 while True:
     gekozen_kleur = input("Kies een kleur (red/ yellow/ brown/ green/ orange): ").lower()
@@ -17,16 +19,25 @@ while True:
 ronde_vruchten = 0
 niet_ronde_vruchten = 0
 
+# for fruit in fruitmand:
+#     if gekozen_kleur == fruit['color'] and fruit['round'] == True: 
+#         ronde_vruchten += 1
+#     elif gekozen_kleur == fruit['color'] and fruit['round'] == False:
+#         niet_ronde_vruchten += 1
+
 for fruit in fruitmand:
-    if gekozen_kleur == fruit['color'] and fruit['round'] == True:
-        ronde_vruchten += 1
-    elif gekozen_kleur == fruit['color'] and fruit['round'] == False:
-        niet_ronde_vruchten += 1
+    if gekozen_kleur == fruit['color']:
+        if fruit['round'] == True: 
+            ronde_vruchten += 1
+        else:
+            niet_ronde_vruchten += 1
+
+
 verschil = ronde_vruchten - niet_ronde_vruchten
 
 # Print vervolgens het volgende als er van de gekozen kleur het verschil van de vrucht:
 if verschil > 0:
-    print(f"Er zijn meer {abs(verschil)} ronde vruchten dan niet ronde vruchten in de kleur {gekozen_kleur}")
+    print(f"Er zijn {abs(verschil)} meer ronde vruchten dan niet ronde vruchten in de kleur {gekozen_kleur}")
 elif verschil < 0:
     print(f"Er zijn {abs(verschil)} minder ronde vruchten dan niet ronde vruchten in de kleur {gekozen_kleur}")
 elif verschil == 0:

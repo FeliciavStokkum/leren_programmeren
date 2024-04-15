@@ -2,6 +2,8 @@
 
 from fruitmand import *
 
-fruitmand.reverse()
-for fruit in fruitmand:
-    print(fruit["name"])
+fruitmand.reverse() #hier draai ik de fruitmand om
+for fruit in fruitmand[: : -1]: #for loop met elke dictionary in de lijst
+    print(fruit["name"]) #hier print ik de fruit namen (deze zijn omgedraaid)
+
+#Twee manieren van omdraaien

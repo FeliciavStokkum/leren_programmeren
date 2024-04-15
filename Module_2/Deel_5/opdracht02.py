@@ -4,7 +4,7 @@ from fruitmand import *
 #Manier 1
 lijst = [] #lege lijst, zodat je elk fruitstuk uit de lijst kan halen
 
-for fruit in fruitmand: #for loop
+for fruit in fruitmand: #for elke dictionary in de lijst met dictionaries
     lijst.append(fruit) #hier word in de lijst de fruitsoorten geappend
 
 print(len(lijst)) #Hier print ik de lengte van de lijst 
