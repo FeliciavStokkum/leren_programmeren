@@ -1,0 +1,26 @@
+Start van het programma
+
+Maak een lijst voor namen
+
+input Vraag een naam
+controleer of de naam in de lijst staat
+if naam in lijst, geef melding probeer opnieuw
+Vervolgens ga je terug naar line 5
+
+If naam is not in lijst voeg de naam toe aan de lijst
+
+Vraag of de gebruiker nog een naam wilt invoeren
+if invoeren == ja, terug naar line 5
+
+if invoeren != ja, controleer of er meer dan drie namen in de lijst staan
+
+if namen < 3 voer opnieuw een naam in, terug naar line 5
+
+namen == or > 3 dmv random lootjes opslaan in lijst
+
+Controleer de lootjes lijst
+
+If naam == lootje terug naar line 19
+
+if naam is niet gelijk aan lootje 
+print de lootjes
