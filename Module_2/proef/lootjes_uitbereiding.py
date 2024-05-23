@@ -27,8 +27,14 @@ while True:
 random.shuffle(namen_lijst)
 lootje_dict = {}
 
+# for i in range(len(namen_lijst)):
+#     lootje_dict[namen_lijst[i]] = namen_lijst[(i + 1) % len(namen_lijst)]
+
 for i in range(len(namen_lijst)):
-    lootje_dict[namen_lijst[i]] = namen_lijst[(i + 1) % len(namen_lijst)]
+    if i == len(namen_lijst) - 1:
+        lootje_dict[namen_lijst[i]] = namen_lijst[0] 
+    else:
+        lootje_dict[namen_lijst[i]] = namen_lijst[i + 1] 
 
 uitslag = []
 
