@@ -5,6 +5,8 @@
 def even_odd(number:int) -> bool:
     return number % 2 == 0
 
+#Geeft True terug
+print(even_odd(10))
 
 #Slaat de zin op in een lijst en draaid de lijst om
 #Parameter is een string, er word ook een string terug gegeven
@@ -20,27 +22,48 @@ def turn_sentence_around(text:str) -> str:
 # #Print world hello
 print(turn_sentence_around("Hello World"))
 
+#Deze functie bekijkt hoeveel verschillende tekens erin de string zitten
+#Dan worden de tekens opgeslagen in set 
+#Dan word de lengte bepaald van de characters 
+#Dan geeft hij de lengte van de tekens terug
 
-#Slaat de 
+def different_characters(characters_text:str) -> int:
+    all_charachters = set(characters_text)
+    len_charachters = len(all_charachters)
+    return len_charachters
 
-def kosmische_koekjesmix(galactische_snoepjes:str) -> int:
-    planetair_taartje = set(galactische_snoepjes)
-    whatchamacallit = len(planetair_taartje)
-    return whatchamacallit
+#Geeft 8 terug
+print(different_characters("Hello World"))
 
-print(kosmische_koekjesmix("Hallo"))
+# Deze functie berekend het gemiddelde aantal tekens per woord in de string
+# Je geeft een string op, hier komt een float uit
+# Eerst word de opgegeven string opgesplitst, deze word opgeslagen in een variabele
+# de counter telt hoeveel worden er in de opgegeven zin zitten
+# dan word de hoeveelheid worden gedeeld door de lengte van de gesplitte tekst
+# Dan returnt hij de float
 
-# def ruimte_hamsterwiel(planetair_taartje:str) -> float:
-#     wobbelwobbel = planetair_taartje.split()
+def average_word_length(sentence_input:str) -> float:
+    sentence_split = sentence_input.split()
     
-#     blork = 0
-#     for snorkelwagen in wobbelwobbel:
-#         blork += len(snorkelwagen)
+    counter = 0
+    for word in sentence_split:
+        counter += len(word)
 
-#     bizarro_matrix = blork / len(wobbelwobbel)
-#     return bizarro_matrix
+    results = counter / len(sentence_split)
+    return results
 
-# def spaghetti_spaceship(infinity_pizza:int, parallelle_tosti:int=10) -> None:
-#     for zwabber_krakeling in range(1, parallelle_tosti+1):
-#         laser_sandwich = zwabber_krakeling * infinity_pizza
-#         print(f'{zwabber_krakeling} x {infinity_pizza} = {laser_sandwich}')
+#Geeft 4.25 terug
+print(average_word_length("Mijn naam is Felicia"))
+
+#Deze functie berekend de tafel met wat je invoert
+#Je voert een getal in, het tweede getal staat al vast in de parameter
+#vervolgens word per getal in range de berekening gemaakt
+#Dat is de getal in de range keer het getal dat je invult
+#Dan wordt de uitslag geprint
+
+def tafel_berekening(getal:int, getal_10:int=10) -> None:
+    for getal in range(1, getal_10+1):
+       berekening = getal * getal
+       print(f'{getal} x {getal} = {berekening}')
+
+print(tafel_berekening(2))
