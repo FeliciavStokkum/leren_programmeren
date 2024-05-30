@@ -4,6 +4,7 @@ def naam_age():
     #De name en age worden opgeslagen in de dict
     dict_name_age['name'] = input("Wat is je naam?: ")  
     dict_name_age['age'] = input("Wat is je leeftijd?: ")  
+    dict_name_age['city'] = input("In welke stad woon je?: ")
     return dict_name_age 
 
 def questions():
@@ -21,4 +22,4 @@ def questions():
 
 lijst = questions()
 for dict in lijst:
-    print(f"{dict['name']} is {dict['age']} jaar")
+    print(f"{dict['name']}, die in {dict['city']} woont, is {dict['age']} jaar")
