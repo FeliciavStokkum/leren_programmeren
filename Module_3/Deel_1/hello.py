@@ -4,4 +4,4 @@ def hello(getallen: int):
         zin += (f"Hello from function town {x + 1}! \n")
     return zin
 
-print(hello(5))
+print(hello(8))
