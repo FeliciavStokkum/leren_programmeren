@@ -5,6 +5,7 @@ func_checker = ["a", "b", "c", "d", "e", "f", "g", "h", ""]
 text_intro = "Wat wilt u doen?\n"
 
 full_som = ""
+stoppen = ""
 firstround = True
 
 def get_number(invoer):
@@ -12,6 +13,8 @@ def get_number(invoer):
     return number()
 
 while True:
+    if firstround == False:
+        stoppen = "Niets om te stoppen"
     text = (
         f"{text_intro}"
         "A) getallen optellen\n"
@@ -22,7 +25,7 @@ while True:
         "F) getal verlagen\n"
         "G) getal verdubbelen\n"
         "H) getal halveren\n"
-        "of niets om te stoppen: "
+        f"{stoppen}\n"
     )
     func = input(text).lower()
     if func not in func_checker:
