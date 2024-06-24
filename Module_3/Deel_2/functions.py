@@ -1,7 +1,7 @@
 import time
 from termcolor import colored
 from data import JOURNEY_IN_DAYS
-from data import COST_FOOD_HUMAN_COPPER_PER_DAY, COST_FOOD_HORSE_COPPER_PER_DAY, JOURNEY_IN_DAYS, friends
+from data import COST_FOOD_HUMAN_COPPER_PER_DAY, COST_FOOD_HORSE_COPPER_PER_DAY, JOURNEY_IN_DAYS, friends, COST_HORSE_SILVER_PER_DAY, COST_TENT_GOLD_PER_WEEK
 
 ##################### O03 #####################
 
@@ -39,21 +39,25 @@ def getJourneyFoodCostsInGold(people:int, horses:int) -> float:
 ##################### O06 #####################
 
 def getFromListByKeyIs(list:list, key:str, value:any) -> list:
-    sorted_list = []
+    nieuwe_list = []
+    for dict in list:
+        if dict.get(key) == value:
+            nieuwe_list.append(dict)
 
-    for item in list:
-        if item.get(key) == value:  
-            sorted_list.append(item)
-            return sorted_list
+    return nieuwe_list
 
 def getAdventuringPeople(people:list) -> list:
-    return getFromListByKeyIs(friends, "adventuring", True)
+    return getFromListByKeyIs(people, 'adventuring', True)
 
 def getShareWithFriends(friends:list) -> list:
-    pass
+    return getFromListByKeyIs(friends, 'shareWith', True)
 
 def getAdventuringFriends(friends:list) -> list:
-    pass
+    adventuring_friends = getAdventuringPeople(friends)
+    share_with_friends = getShareWithFriends(friends)
+
+    # Return the intersection of the two lists
+    return [friend for friend in adventuring_friends if friend in share_with_friends]
 
 ##################### O07 #####################
 
