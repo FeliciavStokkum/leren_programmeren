@@ -1,5 +1,6 @@
 import time
 from termcolor import colored
+import math
 from data import JOURNEY_IN_DAYS
 from data import COST_FOOD_HUMAN_COPPER_PER_DAY, COST_FOOD_HORSE_COPPER_PER_DAY, JOURNEY_IN_DAYS, friends, COST_HORSE_SILVER_PER_DAY, COST_TENT_GOLD_PER_WEEK
 
