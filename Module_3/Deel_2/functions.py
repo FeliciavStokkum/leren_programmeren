@@ -63,33 +63,60 @@ def getAdventuringFriends(friends:list) -> list:
 ##################### O07 #####################
 
 def getNumberOfHorsesNeeded(people:int) -> int:
-    horses = math.ceil(people / 2)
-    return horses
+    paarden = math.ceil(people / 2) 
+    return paarden
 
 def getNumberOfTentsNeeded(people:int) -> int:
-    tents = math.ceil(people / 3)
-    return tents
+    tenten = math.ceil(people / 3) 
+    return tenten
 
-def getTotalRentalCost(horses:int, tents:int) -> float:
-    number_horses = getNumberOfHorsesNeeded(horses)
-    number_tents = getNumberOfTentsNeeded(tents)
+def getTotalRentalCost(horses: int, tents: int) -> float:
+    horses_gold_cost = silver2gold(COST_HORSE_SILVER_PER_DAY)
+    weeks = math.ceil(JOURNEY_IN_DAYS / 7)
 
-    total_horse_cost_silver = number_horses * COST_HORSE_SILVER_PER_DAY * JOURNEY_IN_DAYS
-    total_horse_cost_gold = silver2gold(total_horse_cost_silver)
-
-    total_tent_cost_gold = number_tents * COST_TENT_GOLD_PER_WEEK * math.ceil(JOURNEY_IN_DAYS / 7)
-
-    total_cost_gold = total_horse_cost_gold + total_tent_cost_gold
-
-    return total_cost_gold
+    horses_cost = (horses_gold_cost * JOURNEY_IN_DAYS) * horses
+    tents_cost = (weeks * COST_TENT_GOLD_PER_WEEK) * tents
+    return float(horses_cost + tents_cost)
 
 ##################### O08 #####################
 
 def getItemsAsText(items:list) -> str:
+    # Maak een lijst van strings
+    formatted_items = [f"{item['amount']}{item['unit']} {item['name']}" for item in items]
+    
+    # Verwerk de lijst afhankelijk van het aantal items
+    if len(formatted_items) == 1:
+        return formatted_items[0]
+    elif len(formatted_items) == 2:
+        return " & ".join(formatted_items)
+    else:
+        return ", ".join(formatted_items[:-1]) + " & " + formatted_items[-1]
     pass
 
 def getItemsValueInGold(items:list) -> float:
-    pass
+    total_amount = 0
+    for item in items:
+        item_amount = item['amount']
+        item_type = item['price']['type']
+        amount = item['price']['amount']
+
+        if item_type == 'platinum':
+            amount = platinum2gold(amount) * item_amount
+            total_amount = total_amount + amount
+
+        elif item_type == 'copper':
+            amount = copper2gold(amount) * item_amount
+            total_amount = total_amount + amount
+
+        elif item_type == 'silver':
+            amount = silver2gold(amount) * item_amount
+            total_amount = total_amount + amount
+        
+        elif item_type == 'gold':
+            amount = amount * item_amount
+            total_amount += amount 
+
+    return float(round(total_amount, 2))
 
 ##################### O09 #####################
 
